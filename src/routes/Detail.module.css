@@ -6,12 +6,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  align-items: top;
   font-weight: 300;
   animation: wiggle 1s ease-in-out infinite;
 }
 
 .container {
+  position: relative;
   height: 100%;
   background-size: cover;
   background-position: center;
@@ -19,6 +19,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* 투명도 조절 가능 */
+  z-index: 0;
 }
 
 .title {
@@ -32,6 +43,7 @@
 }
 
 .mainContainer {
+  z-index: 1;
   display: flex;
   flex-direction: column;
   margin: 2rem 0;
@@ -48,6 +60,16 @@
 .genres {
   display: flex;
   gap: 1rem;
+}
+
+.gohome {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+.gohome a {
+  color: #fffeff;
+  text-decoration: none;
 }
 
 @keyframes wiggle {

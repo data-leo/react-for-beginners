@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from "./Detail.module.css";
 
@@ -16,7 +16,11 @@ function Detail() {
   }, []);
 
   if (!movie) {
-    return <div className={styles.loading}>Loading...</div>;
+    return (
+      <div>
+        <div className={styles.loading}>Loading...</div>;
+      </div>
+    );
   }
 
   return (
@@ -42,6 +46,11 @@ function Detail() {
               <div key={g}>{g}</div>
             ))}
           </div>
+        </div>
+        <div className={styles.gohome}>
+          <h3>
+            <Link to={`/`}>{`<< Go home`}</Link>
+          </h3>
         </div>
       </div>
     </div>
