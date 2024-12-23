@@ -49,7 +49,7 @@ function Detail() {
         </div>
         <div className={styles.gohome}>
           <h3>
-            <Link to={`/`}>{`<< Go home`}</Link>
+            <Link to={`/react-for-beginners/`}>{`<< Go home`}</Link>
           </h3>
         </div>
       </div>
